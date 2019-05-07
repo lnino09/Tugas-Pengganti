@@ -1,0 +1,449 @@
+#include <fstream>
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+#include <process.h>
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+class file
+{
+private:
+	char ttl[100];
+	char alamat[100];
+	char name[100];
+public:
+	void input();
+	void show();
+	char *getn()
+	{
+		return name;
+	}
+};file fileobj;
+ 
+void file::input()
+{
+	cout<<"Masukkan Nama :";
+	cin>>name;
+	gets(name);
+	
+	cout<<"Masukkan Tempat, Tanggal Lahir : ";
+	cin>>ttl;
+	gets(ttl);
+	
+	cout<<"Masukkan Alamat :";
+	cin>>alamat;
+	gets(alamat);
+}
+void file::show()
+{
+	cout<<"Nama		: "<<name<<endl;
+	cout<<"TTL		: "<<ttl<<endl;
+	cout<<"Alamat	: "<<alamat<<endl;
+}
+void Create();
+void Add();
+void Display();
+void DisplayP();
+void Modify();
+void Delete();
+ 
+fstream fil;
+int main()
+{
+		int pilihan;
+		cout<<"====================================="<<endl;
+		cout<<"Aplikasi Pendaftaran Puskesmas"<<endl;
+		cout<<"====================================="<<endl;
+		cout<<"1. Data Pasien"<<endl;
+		cout<<"2. Data Poli"<<endl;
+		cout<<"3. Transaksi Pendaftaran"<<endl<<endl;
+		cout<<"Opsi Pilihan : ";
+		cin>>pilihan;
+		switch(pilihan){
+		case 1 : {
+			
+		
+		int opt;
+		while(1)
+		{
+		system("cls");
+		cout<<"===================================="<<endl;
+		cout<<"Data Pasien					"<<endl;
+		cout<<"===================================="<<endl<<endl;
+		cout<<"1.Buat Data Pasien"<<endl;
+		cout<<"2.Tambahkan Data Pasien Baru"<<endl;
+		cout<<"3.Tampilkan Data Pasien"<<endl;
+		cout<<"4.Tampilkan Keseluruhan Data Pasien"<<endl;
+		cout<<"5.Modifikasi Data Pasien"<<endl;
+		cout<<"6.Hapus Data Pasien"<<endl;
+		cout<<"7.Keluar Dari Program"<<endl;
+		cout<<endl;
+		cout<<"Catatan saat menginput/memodif: "<<endl;
+		cout<<"Untuk Melanjutkan silahkan ketik 'y'"<<endl;
+		cout<<"Untuk Keluar silahkan ketik 'close' "<<endl<<endl;
+		cout<<"Masukkan Pilihan : ";
+		cin>>opt;
+		switch(opt)
+		{
+			case 1:
+			{
+				Create();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 2:
+			{
+				Add();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 3:
+			{
+				Display();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 4:
+			{
+				DisplayP();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 5:
+			{
+				Modify();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 6:
+			{
+				Delete();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 7:
+			{
+				exit(0);
+			}
+			default:
+			{
+				cout<<"Wrong Choice....Press Key For View the Main Menu";
+				getch();
+				system("cls");
+			}
+		}
+	}
+	break;
+		}
+	
+	case 2 :
+	{
+		
+		
+		int opt;
+		while(1)
+		{
+		system("cls");
+		cout<<"1.Buat Data Poli"<<endl;
+		cout<<"2.Tambahkan Data Poli"<<endl;
+		cout<<"3.Tampilkan Data Poli"<<endl;
+		cout<<"4.Tampilkan Keseluruhan Data Poli"<<endl;
+		cout<<"5.Modifikasi Data Poli"<<endl;
+		cout<<"6.Hapus Data Poli"<<endl;
+		cout<<"7.Keluar dari program"<<endl;
+		cout<<"Masukkan Pilihan : ";
+		cin>>opt;
+		switch(opt)
+		{
+			case 1:
+			{
+				Create();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 2:
+			{
+				Add();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 3:
+			{
+				Display();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 4:
+			{
+				DisplayP();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 5:
+			{
+				Modify();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 6:
+			{
+				Delete();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 7:
+			{
+				exit(0);
+			}
+			default:
+			{
+				cout<<"Pilihan Salah....Masukkan Kata Kunci Untuk Melihat Main Menu";
+				getch();
+				system("cls");
+			}
+		}
+	}
+break;
+}
+	
+	case 3 :
+	{
+		
+		
+		int opt;
+		while(1)
+		{
+		system("cls");
+		cout<<"1.Input Tanggal Pendaftaran"<<endl;
+		cout<<"2.Pilih Data Pasien"<<endl;
+		cout<<"3.Pilih Data Poli"<<endl;
+		cout<<"Masukkan Pilihan : "<<endl;
+		cin>>opt;
+		switch(opt)
+		{
+			case 1:
+			{
+				Create();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 2:
+			{
+				Add();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 3:
+			{
+				Display();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 4:
+			{
+				DisplayP();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 5:
+			{
+				Modify();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 6:
+			{
+				Delete();
+				cout<<"Display Main Menu"<<endl;
+				getch();
+				break;
+			}
+			case 7:
+			{
+				exit(0);
+			}
+			default:
+			{
+				cout<<"Pilihan Salah....Masukkan Kata kunci untuk melihat main menu";
+				getch();
+				system("cls");
+			}
+		}
+	}
+break;
+	}
+
+}
+}
+ 
+void Create()		//Fungsi untuk membuat data
+{
+	char ch='y';
+	fil.open("binary.dat",ios::out| ios::binary);
+	while(ch=='y' || ch =='Y')
+	{
+		fileobj.input();
+		fil.write((char*)&fileobj, sizeof(fileobj));
+		cout<<"Lanjut memasukkan data...? ";
+		cin>>ch;
+	}
+	fil.close();
+}
+ 
+void Add()              //Fungsi untuk menambahkan data
+{
+	char ch='y';
+	fil.open("binary.dat",ios::app| ios::binary);
+	while(ch=='y' || ch =='Y')
+	{
+		fileobj.input();
+		fil.write((char*)&fileobj, sizeof(fileobj));
+		cout<<"Lanjut masukkan data.....? ";
+		cin>>ch;
+	}
+	fil.close();
+}
+ 
+void Display()		//Function to Display All Record from Data File
+{
+	fil.open("binary.dat",ios::in| ios::binary);
+	if(!fil)
+	{
+		cout<<"Data Tidak ditemukan";
+		exit(0);
+	}
+	else
+	{
+		fil.read((char*)&fileobj, sizeof(fileobj));
+		while(!fil.eof())
+		{
+			fileobj.show();
+			cout<<"Masukkan kata kunci....untuk Data baru selanjutnya"<<endl;
+			getch();
+			fil.read((char*)&fileobj, sizeof(fileobj));
+		}
+	}
+	fil.close();
+}
+ 
+void DisplayP()		//Function to Display particular Record from Data File
+{
+	char n[100];
+	cout<<"Masukkan nama yang ingin dicari:";
+	gets(n);
+	fil.open("binary.dat",ios::in| ios::binary);
+	if(!fil)
+	{
+		cout<<"Data Tidak di temukan";
+		exit(0);
+	}
+	else
+	{
+		fil.read((char*)&fileobj, sizeof(fileobj));
+		while(!fil.eof())
+		{
+			if(strcmp(n,fileobj.getn())==0)
+			{
+				fileobj.show();
+				cout<<"Masukkan kata kunci. . ."<<endl;
+				getch();
+			}
+			else
+			{
+				 cout<<"Masukkan kata kunci....untuk mencari"<<endl;
+				 getch();
+			}
+			fil.read((char*)&fileobj, sizeof(fileobj));
+		}
+	}
+	fil.close();
+}
+void Modify()		//Function to Modify Particular Record from Data File
+{
+	char name[100];
+	cout<<"Masukkan nama yang ingin dicari :";
+	gets(name);
+	fil.open("binary.dat",ios::in| ios::out|ios::binary);
+	if(!fil)
+	{
+		cout<<"Data tidak ditemukan";
+		exit(0);
+	}
+	else
+	{
+		fil.read((char*)&fileobj, sizeof(fileobj));
+		while(!fil.eof())
+		{
+			if(strcmp(name,fileobj.getn())==0)
+			{
+				fil.seekg(0,ios::cur);
+				cout<<"Masukkan Data Baru"<<endl;
+				fileobj.input();
+				fil.seekp(fil.tellg() - sizeof(fileobj));
+				fil.write((char*)&fileobj, sizeof(fileobj));
+			}
+			else
+			{
+				 cout<<"Masukkan kata kunci....Untuk Mencari"<<endl;
+				 getch();
+			}
+			fil.read((char*)&fileobj, sizeof(fileobj));
+		}
+	}
+	fil.close();
+}
+ 
+void Delete()		//Function to Delete Particular Record from Data File
+{
+	char name[100];
+	cout<<"Masukkan nama yang ingin dihapus :";
+	gets(name);
+	ofstream o;
+	o.open("new.dat",ios::out|ios::binary);
+	fil.open("binary.dat",ios::in| ios::binary);
+	if(!fil)
+	{
+		cout<<"File tidak ditemukan";
+		exit(0);
+	}
+	else
+	{
+		fil.read((char*)&fileobj, sizeof(fileobj));
+		while(!fil.eof())
+		{
+			if(strcmp(name,fileobj.getn())!=0)
+			{
+				o.write((char*)&fileobj, sizeof(fileobj));
+			}
+			else
+			{
+				 cout<<"Masukkan kata kunci....untuk mencari"<<endl;
+				 getch();
+			}
+			fil.read((char*)&fileobj, sizeof(fileobj));
+		}
+	}
+	o.close();
+	fil.close();
+	remove("binary.dat");
+	rename("new.dat", "binary.dat");
+}//end of program
